@@ -18,6 +18,30 @@ fetch('https://api.github.com/users/gojibetters/repos')
   .then(response => {
     const data = response
 
+    const elementContainer = document.querySelector('.container')
+    const repoCard = `<div class="item">
+    <div class="title"></div>
+    <div class="description"></div>
+    <div class="stats">
+      <div class="starIcon">
+        <img src="assets/star.png" />
+        <div class="stars"></div>
+      </div>
+      <div class="forksIcon">
+        <img src="assets/git-branch.png" />
+        <div class="forks"></div>
+      </div>
+      <div class="languageIcon">
+        <img src="assets/yellipse.png" />
+        <div class="language"></div>
+      </div>
+    </div>
+  </div>`
+
+    for (let i = 0; i < data.length - 1; i++) {
+      elementContainer.innerHTML += repoCard
+    }
+
     //repo
     const elementTitle = document.getElementsByClassName('title')
     const elementDescription = document.getElementsByClassName('description')
@@ -26,7 +50,6 @@ fetch('https://api.github.com/users/gojibetters/repos')
     const elementLanguage = document.getElementsByClassName('language')
 
     for (let i = 0; i < elementTitle.length; i++) {
-      console.log(elementTitle.length)
       elementTitle[
         i
       ].innerHTML = `<a href="${data[i].html_url}" target="_blank">${data[i].name}</a>`
