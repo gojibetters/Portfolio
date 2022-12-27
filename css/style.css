@@ -84,6 +84,10 @@ section:nth-child(1) {
   color: #837e9f;
 }
 
+.socialMedia .item img {
+  margin-right: 0.5rem;
+}
+
 .technologies {
   display: flex;
   flex-wrap: wrap;
@@ -254,7 +258,7 @@ section .textProjects h1 {
   color: #837e9f;
 }
 
-section .textProjects h2 {
+section .textProjects h2 a {
   font-family: 'Merriweather Sans';
   font-style: normal;
   font-weight: 400;
@@ -276,7 +280,7 @@ section .container .item {
   display: flex;
   flex-direction: column;
   width: 24.25rem;
-  height: 5.5rem;
+  height: 6.5rem;
   padding: 1.25rem;
   border-radius: 1.25rem;
   margin-top: 1.5rem;
@@ -286,7 +290,10 @@ section .container .item {
   line-height: 1.25rem;
 }
 
-.container .item .title {
+.container .item .title a {
+  text-decoration: none;
+  display: inline-block;
+  color: #837e9f;
   font-family: 'Merriweather Sans';
   font-style: normal;
   font-weight: 700;
@@ -302,10 +309,31 @@ section .container .item {
 }
 
 .container .item .stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline-end: 1.5rem;
   font-family: 'Merriweather Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.125rem;
   margin-top: 1rem;
+}
+
+.container .item .stats .starIcon {
+  display: flex;
+}
+
+.container .item .stats .forksIcon {
+  display: flex;
+}
+
+.container .item .stats .languageIcon {
+  display: flex;
+}
+
+.container .item .stats img {
+  margin-right: 0.5rem;
 }
