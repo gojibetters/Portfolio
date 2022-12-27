@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #22212c;
+  justify-content: center;
 }
 
 section:nth-child(1) {

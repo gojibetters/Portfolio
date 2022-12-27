@@ -19,15 +19,20 @@ fetch('https://api.github.com/users/gojibetters/repos')
     const data = response
 
     //repo
-    const elementTitle = document.querySelector('.title')
-    const elementDescription = document.querySelector('.description')
-    const elementStars = document.querySelector('.stars')
-    const elementForks = document.querySelector('.forks')
-    const elementLanguage = document.querySelector('.language')
+    const elementTitle = document.getElementsByClassName('title')
+    const elementDescription = document.getElementsByClassName('description')
+    const elementStars = document.getElementsByClassName('stars')
+    const elementForks = document.getElementsByClassName('forks')
+    const elementLanguage = document.getElementsByClassName('language')
 
-    elementTitle.innerHTML = `<a href="${data[13].html_url}" target="_blank">${data[13].name} </a>`
-    elementDescription.innerHTML = data[13].description
-    elementStars.innerHTML = data[13].stargazers_count
-    elementForks.innerHTML = data[13].forks
-    elementLanguage.innerHTML = data[13].language
+    for (let i = 0; i < elementTitle.length; i++) {
+      console.log(elementTitle.length)
+      elementTitle[
+        i
+      ].innerHTML = `<a href="${data[i].html_url}" target="_blank">${data[i].name}</a>`
+      elementDescription[i].innerHTML = data[i].description
+      elementStars[i].innerHTML = data[i].stargazers_count
+      elementForks[i].innerHTML = data[i].forks
+      elementLanguage[i].innerHTML = data[i].language
+    }
   })
