@@ -1,7 +1,7 @@
 fetch('https://api.github.com/users/gojibetters')
   .then(response => response.json())
-  .then(reponse => {
-    const data = reponse
+  .then(response => {
+    const data = response
 
     //info
     const elementPhoto = document.querySelector('.photo')
@@ -11,6 +11,19 @@ fetch('https://api.github.com/users/gojibetters')
     elementPhoto.innerHTML = `<img src="${data.avatar_url}"/>`
     elementName.innerHTML = data.name
     elementBio.innerHTML = data.bio
+
+    //social media
+    const elementLocation = document.querySelector('.location')
+    const elementCompany = document.querySelector('.company')
+    const elementGithub = document.querySelector('.github')
+    const elementLinkedin = document.querySelector('.linkedin')
+    const elementEmail = document.querySelector('.email')
+
+    elementLocation.innerHTML = `<img src="assets/map-pin.png"/><a href="https://www.google.com/search?q=brazil" target="_blank">Brazil</a>`
+    elementCompany.innerHTML = `<img src="assets/briefcase.png" /><a href="https://lab2dev.com/" target="_blank">Lab2Dev</a>`
+    elementGithub.innerHTML = `<img src="assets/github.png" /><a href="https://github.com/gojibetters" target="_blank">Gojibetters</a>`
+    elementLinkedin.innerHTML = `<img src="assets/linkedin.png" /><a href="https://www.linkedin.com/in/brunopatez/" target="_blank">Bruno Patez</a>`
+    elementEmail.innerHTML = `<img src="assets/mail.png" /><a href="mailto:brunoapatez@gmail.com">Send email</a>`
   })
 
 fetch('https://api.github.com/users/gojibetters/repos')

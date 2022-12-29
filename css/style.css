@@ -61,7 +61,7 @@ section:nth-child(1) {
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 21.75rem;
+  height: 14.75rem;
   margin-top: 2.5rem;
   text-align: center;
   border-radius: 1.25rem;
@@ -83,6 +83,19 @@ section:nth-child(1) {
   padding-top: 1.25rem;
   margin-left: 2.5rem;
   color: #837e9f;
+}
+
+.socialMedia .item a {
+  color: #837e9f;
+}
+
+.socialMedia .item .location,
+.company,
+.github,
+.linkedin,
+.email {
+  display: flex;
+  align-items: center;
 }
 
 .socialMedia .item img {
